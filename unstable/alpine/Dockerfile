@@ -72,7 +72,9 @@ RUN set -eux; \
 	sed -ri 's!cd jemalloc && ./configure !&'"$extraJemallocConfigureFlags"' !' /usr/src/valkey/deps/Makefile; \
 	grep -F "cd jemalloc && ./configure $extraJemallocConfigureFlags " /usr/src/valkey/deps/Makefile; \
 	\
-	export BUILD_TLS=yes; \
+	echo "Unstable version detected — enabling USE_FAST_FLOAT"; \
+			apk add --no-cache g++; \
+		export BUILD_TLS=yes USE_FAST_FLOAT=yes; \
 	make -C /usr/src/valkey -j "$(nproc)" all; \
 	make -C /usr/src/valkey install; \
 	\
