@@ -8,7 +8,6 @@ FROM debian:bookworm-slim AS base
 
 FROM base AS build
 
-ENV VALKEY_VERSION 8.0.4
 ENV VALKEY_DOWNLOAD_SHA 55c12a25f67ef19b615c76b6cb0c92d12753d76eb8d38b31d30e299c3490cdf2
 
 ADD "https://github.com/valkey-io/valkey/archive/refs/tags/8.0.4.tar.gz" /valkey.tar.gz
@@ -73,6 +72,8 @@ RUN set -eux; \
 	echo '{"spdxVersion":"SPDX-2.3","SPDXID":"SPDXRef-DOCUMENT","name":"valkey-server-sbom","packages":[{"name":"valkey-server","versionInfo":"8.0.4","SPDXID":"SPDXRef-Package--valkey-server","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:generic/valkey-server@8.0.4?os_name=debian&os_version=bookworm"}],"licenseDeclared":"BSD-3-Clause"}]}' > /usr/local/valkey.spdx.json
 
 FROM base
+
+ENV VALKEY_VERSION 8.0.4
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN set -eux; \
