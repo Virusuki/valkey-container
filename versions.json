@@ -1,10 +1,10 @@
 {
   "7.2": {
-    "version": "7.2.10",
-    "url": "https://github.com/valkey-io/valkey/archive/refs/tags/7.2.10.tar.gz",
-    "sha256": "33183dd5e5da8db745fbde4c1f041711310fbff6c6013ed8fb97ba28650ff832",
+    "version": "7.2.11",
+    "url": "https://github.com/valkey-io/valkey/archive/refs/tags/7.2.11.tar.gz",
+    "sha256": "12acb6e5c07c71460761eee4361310dbd3618cecd42c70f02223d0ccf31fc6d8",
     "debian": {
-      "version": "bookworm"
+      "version": "trixie"
     },
     "alpine": {
       "version": "3.22"
